@@ -1,6 +1,3 @@
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
-</script>
 
 # Backtracking&Recursion
 
@@ -75,11 +72,9 @@ time: 138034 ms
 ![Backtracking&Recursion_0.cpp](./Backtracking&Recursion_0.png)   
 
 复杂度分析：
-考虑上界（最坏情况），遍历整个解空间，为$$O(n^{2})$$
+考虑上界（最坏情况），遍历整个解空间，为
 
-<img src="http://www.forkosh.com/mathtex.cgi? \Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}">
-
-<img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" style="border:none;">
+<img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large O(n^{2})" style="border:none;">
 
 皇后个数与执行时间的曲线：
 
