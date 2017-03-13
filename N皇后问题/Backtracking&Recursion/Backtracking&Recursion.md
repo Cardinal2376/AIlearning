@@ -73,6 +73,11 @@ time: 138034 ms
 
 复杂度分析：
 考虑上界（最坏情况），遍历整个解空间，为
+![Backtracking&Recursion_0.cpp](http://latex.codecogs.com/svg.latex?O(n^{2}))  
+
+![](http://latex.codecogs.com/svg.latex?O(n^{2}))
+
+<img src="http://latex.codecogs.com/svg.latex?O(n^{2})" border="0"/>
 
 <img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large O(n^{2})" style="border:none;">
 
