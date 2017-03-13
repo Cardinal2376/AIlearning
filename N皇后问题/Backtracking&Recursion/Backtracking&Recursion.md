@@ -23,6 +23,7 @@
 		//注意初始条件，即col=0时
 	}
 	int Q_n (col) {
+		if (col>=N) return 1;
 		row=0;
 		while (row<N) {
 			if (validState(row,col)) { //不攻击
@@ -39,4 +40,54 @@
 但是以上，代码还存在问题。    
 什么时候 **递归停止** 呢？ **col到了N的时候**，已经找到N个皇后布局了。（否则，第一列的row会加到N，跳出`while`，返回0。）
 
-![Backtracking&Recursion](./Backtracking&Recursion.gif)
+![Backtracking&Recursion](./Backtracking&Recursion.gif)  
+
+可以注意到，以上代码不能判断出已经找到N个皇后布局。找到的情况下，返回值为1，然而没有什么用，`while`循环还会继续下去。  
+
+### 代码改错
+
+问题出在返回值上。对递归函数运行后的不同情况（是／否已经到了第N+1列），有不同的返回值（1/0）。我们必须存下这个返回值，并及时地判断。  
+
+	if (validState(row,col)) {
+		//记录位置
+		Q_n (col+1);
+		found = nQ (currentQueen + 1, currentCol + 1);
+		if (found==true) {
+			return true;
+		}
+	}
+	
+同时在全局初始化`found`，即`var found=false;`
+
+### 代码改进
+
+time: 138034 ms
+
+## 实验结果
+
+### Backtracking&Recursion_0.cpp
+
+最多跑了30个皇后：    
+![Backtracking&Recursion_0.cpp](./Backtracking&Recursion_0.png)   
+
+复杂度分析：
+考虑上界（最坏情况），遍历整个解空间，为$$O(n^{2})$$
+
+皇后个数与执行时间的曲线：
+
+  皇后个数（个）  |5   | 10   | 15 |  20 | 25   | 30
+----------------|----|------|----|-----|------|---
+  运行时间（ms） |1    | 2    | 2  | 231 |  84  | 143134
+ 
+## 附件
+
+代码改错后文件：  
+
+[Backtracking&Recursion_0.cpp](./Backtracking&Recursion_0.cpp)
+  
+代码改进后文件：
+  
+js：[Backtracking&Recursion_1.js](./Backtracking&Recursion_1.cpp)；  
+c++：[Backtracking&Recursion_1.cpp](./Backtracking&Recursion_1.cpp)  
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>

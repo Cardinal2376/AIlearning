@@ -1,5 +1,5 @@
 
-var N = 5;	//just change the value of N and the visuals will reflect the configuration!
+var N = 4;	//just change the value of N and the visuals will reflect the configuration!
 
 var board = (function createArray (N) {
     var result = [];
@@ -46,7 +46,9 @@ function nQ (currentQueen, currentCol) {
 }
 
 nQ (0, 0);
-
-for (var i=0;i<N;i++) {
-    console.log('('+queens[i][0]+','+queens[i][1]+')');
+var s='(';
+for (var i=0;i<N-1;i++) {
+    s=s+queens[i][0]+', ';
 }
+s=s+queens[i][0]+')';
+console.log(s);

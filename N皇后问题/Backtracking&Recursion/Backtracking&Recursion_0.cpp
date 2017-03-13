@@ -14,7 +14,7 @@
 
 int board[N][N];
 int queen[N][2];
-
+int found = 0;
 int validState (int row, int col, int currentQueen) {
     int q,currentQ[2];
     for (q=0; q<currentQueen; q++) {
@@ -31,17 +31,20 @@ int nQ (int currentQueen, int currentCol) {
     if (currentQueen >=N ) {
         return 1;
     }
-    int found = 0;
+    
     int row=0;
     while ((row<N)&&(!found)) {
         if (validState (row, currentCol, currentQueen)) {
             queen[currentQueen][0]=row;
             queen[currentQueen][1]=currentCol;
             found=nQ(currentQueen+1, currentCol+1);
+            if (found) {
+                return 1;
+            }
         }
         row++;
     }
-    return found;
+    return 0;
 }
 
 int main(int argc, const char * argv[]) {
@@ -58,10 +61,11 @@ int main(int argc, const char * argv[]) {
     
     ftime( &end);
     printf("time: %d ms\n", (end.time-start.time)*1000 + (end.millitm - start.millitm));
-   
-    for (i=0;i<N;i++) {
-        printf("(%d,%d)\n",queen[i][0],queen[i][1]);
+    printf("(");
+    for (i=0;i<N-1;i++) {
+        printf("%d, ",queen[i][0]);
     }
+    printf("%d)\n",queen[i][0]);
     return 0;
 }
 
