@@ -1,3 +1,7 @@
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
 # Backtracking&Recursion
 
 ## 程序设计与算法分析
@@ -90,4 +94,3 @@ time: 138034 ms
 js：[Backtracking&Recursion_1.js](./Backtracking&Recursion_1.cpp)；  
 c++：[Backtracking&Recursion_1.cpp](./Backtracking&Recursion_1.cpp)  
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
